@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Smart Traffic Management</title>
+
+    <style>
+
+        body{
+            background:black;
+            color:white;
+            font-family:Arial;
+            text-align:center;
+        }
+
+        h1{
+            color:cyan;
+            margin-top:20px;
+        }
+
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+            gap:30px;
+            margin-top:20px;
+        }
+
+        img{
+            width:700px;
+            border:4px solid white;
+            border-radius:10px;
+        }
+
+        .dashboard{
+            width:300px;
+            background:#111;
+            padding:20px;
+            border-radius:10px;
+            border:2px solid white;
+            text-align:left;
+        }
+
+        .dashboard h2{
+            color:yellow;
+            text-align:center;
+        }
+
+        .dashboard p{
+            font-size:22px;
+            margin:15px 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>AI Smart Traffic Management System</h1>
+
+    <div class="container">
+
+        <img src="{{ url_for('video') }}">
+
+        <div class="dashboard">
+
+            <h2>Live Dashboard</h2>
+
+            <p id="cars">Cars: 0</p>
+
+            <p id="trucks">Trucks: 0</p>
+
+            <p id="buses">Buses: 0</p>
+
+            <p id="motorcycles">Motorcycles: 0</p>
+
+            <p id="total">Total Vehicles: 0</p>
+
+            <p id="status">Traffic Status: Low Traffic</p>
+
+            <p id="signal">Signal Time: 0 sec</p>
+
+        </div>
+
+    </div>
+
+<script>
+
+async function updateDashboard(){
+
+    const response = await fetch('/data');
+
+    const data = await response.json();
+
+    document.getElementById("cars").innerText =
+        "Cars: " + data.cars;
+
+    document.getElementById("trucks").innerText =
+        "Trucks: " + data.trucks;
+
+    document.getElementById("buses").innerText =
+        "Buses: " + data.buses;
+
+    document.getElementById("motorcycles").innerText =
+        "Motorcycles: " + data.motorcycles;
+
+    document.getElementById("total").innerText =
+        "Total Vehicles: " + data.total;
+
+    document.getElementById("status").innerText =
+        "Traffic Status: " + data.status;
+
+    document.getElementById("signal").innerText =
+        "Signal Time: " + data.signal_time + " sec";
+}
+
+setInterval(updateDashboard, 1000);
+
+</script>
+
+</body>
+</html>
