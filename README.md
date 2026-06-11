@@ -18,5 +18,6 @@ python app.py
 ## Demo Video
 "https://www.youtube.com/embed/l7QHV8w9ars" 
 
-## Output Screenshot
-![Screenshot](assets/screenshot.png) 
+##  Output Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/navya-co-prog/Smart-traffic-management-system/main/assets/screenshot.png)
