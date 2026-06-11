@@ -17,3 +17,6 @@ python app.py
 
 ## Demo Video
 "https://www.youtube.com/embed/l7QHV8w9ars" 
+
+## Output Screenshot
+[Project Screenshot](assets/screenshot.png)
