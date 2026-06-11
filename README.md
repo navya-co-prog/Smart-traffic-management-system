@@ -19,6 +19,4 @@ python app.py
 "https://www.youtube.com/embed/l7QHV8w9ars" 
 
 ## Output Screenshot
-<p align="center">
-  <img src="assets/screenshot.png" width="500"/>
-</p>
+![Screenshot](./assets/screenshot.png)
