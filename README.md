@@ -20,6 +20,5 @@ python app.py
 
 ##  Output Screenshot
 
-
-![Screenshot](https://raw.githubusercontent.com/navya-co-prog/Smart-traffic-management-system/main/assets/screenshot.png)
+<img src="https://raw.githubusercontent.com/navya-co-prog/Smart-traffic-management-system/main/assets/screenshot.png" width="500">
 
