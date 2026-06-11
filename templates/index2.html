@@ -52,6 +52,70 @@
             margin:15px 0;
         }
 
+        .traffic-light{
+         background:#222;
+         width:80px;
+         padding:10px;
+         border-radius:10px;
+         margin:20px auto;
+        text-align:center;
+        }
+
+     .light{
+        width:50px;
+        height:50px;
+        border-radius:50%;
+       margin:10px auto;
+     }
+
+   .red{
+    background:red;
+    }
+
+   .yellow{
+    background:yellow;
+    }
+
+  .green{
+    background:green;
+    }
+
+   .traffic-light{
+    background:#222;
+    width:80px;
+    padding:10px;
+    border-radius:10px;
+    margin:20px auto;
+    text-align:center;
+   }
+
+   .light{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin:10px auto;
+    opacity:0.2;
+   }
+
+   .red{
+    background:red;
+   }
+
+   .yellow{
+    background:yellow;
+    }
+
+   .green{
+    background:green;
+    }
+
+   .active{
+    opacity:1;
+    box-shadow:0 0 20px white;
+    }
+
+
+
     </style>
 
 </head>
@@ -80,8 +144,16 @@
 
             <p id="status">Traffic Status: Low Traffic</p>
 
-            <p id="signal">Signal Time: 0 sec</p>
+        
+       <div class="traffic-light">
+       <div id="red-light" class="light red"></div>
+       <div id="yellow-light" class="light yellow"></div>
+      <div id="green-light" class="light green"></div>
+      </div>
 
+<p id="signal-color">Signal: GREEN</p>
+
+      <p id="signal">Signal Time: 0 sec</p>
         </div>
 
     </div>
@@ -114,15 +186,37 @@ async function updateDashboard(){
 
     document.getElementById("signal").innerText =
         "Signal Time: " + data.signal_time + " sec";
+
+
+    const redLight = document.getElementById("red-light");
+const yellowLight = document.getElementById("yellow-light");
+const greenLight = document.getElementById("green-light");
+
+redLight.classList.remove("active");
+yellowLight.classList.remove("active");
+greenLight.classList.remove("active");
+
+if (data.status === "High Traffic") {
+    redLight.classList.add("active");
+    document.getElementById("signal-color").innerText =
+        "Signal: RED";
+}
+else if (data.status === "Medium Traffic") {
+    yellowLight.classList.add("active");
+    document.getElementById("signal-color").innerText =
+        "Signal: YELLOW";
+}
+else {
+    greenLight.classList.add("active");
+    document.getElementById("signal-color").innerText =
+        "Signal: GREEN";
+}
+
 }
 
 setInterval(updateDashboard, 1000);
 
 </script>
-
-<iframe width="560" height="315"
-    src="https://www.youtube.com/embed/l7QHV8w9ars" allowfullscreen>
-</iframe>
 
 </body>
 </html>
