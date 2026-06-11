@@ -21,5 +21,5 @@ python app.py
 ##  Output Screenshot
 
 
-![Screenshot](assets/screenshot.png)
+!test(assets/screenshot.png)
 
