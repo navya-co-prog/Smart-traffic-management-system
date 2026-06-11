@@ -1,4 +1,4 @@
-# 🚦 Traffic Management System (Flask + YOLO)
+# Smart Traffic Management System (Flask + YOLO)
 
 ##  Project Description
 This project is a real-time traffic management system built using Flask, OpenCV, and YOLO (Ultralytics). It detects and analyzes vehicles from video input for traffic monitoring.
