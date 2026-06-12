@@ -22,3 +22,8 @@ python app.py
 
 "https://raw.githubusercontent.com/navya-co-prog/Smart-traffic-management-system/main/assets/screenshot.jpg"
 
+##  Deployment Note
+
+Due to Render free tier memory limitations (512MB RAM), real-time video processing using OpenCV and YOLO is not supported on deployment.  
+Therefore, video processing runs only in the local environment, while the Render deployment is used for the web interface and dashboard.
+
