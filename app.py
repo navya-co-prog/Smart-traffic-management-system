@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, Response, jsonify
 import cv2
 from ultralytics import YOLO
@@ -117,4 +118,5 @@ def data():
     return jsonify(traffic_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+
+    app.run(debug=True)   
